@@ -1,0 +1,16 @@
+[
+{
+"id": 1,
+"title": "My First HTML Project",
+"date": "March 2026",
+"image": "images/post1.jpg",
+"content": "This is the full article content for my first HTML project..."
+},
+{
+"id": 2,
+"title": "Learning CSS",
+"date": "March 2026",
+"image": "images/post2.jpg",
+"content": "CSS is used for styling websites..."
+}
+]
