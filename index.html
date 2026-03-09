@@ -1,64 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeWithTaimur</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taimur.dev - Developer Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>CodeWithTaimur</h1>
-        <p>Programming tutorials, problem-solving, and mini tools</p>
-        <nav>
-            <a href="#blog">Blog</a> |
-            <a href="#tools">Tools</a> |
-            <a href="#projects">Projects</a>
-        </nav>
-    </header>
 
-    <main>
-        <section id="blog">
-            <h2>Latest Articles</h2>
-            <ul>
-                <li>How to find second largest number in JavaScript</li>
-                <li>Accumulator pattern explained</li>
-                <li>Reverse Array Tool</li>
-            </ul>
-        </section>
+  <!-- Navbar -->
+  <header>
+    <div class="container nav-container">
+      <h1>Taimur.dev</h1>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#posts">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-buttons">
+        <button id="theme-toggle">🌙</button>
+        <button id="menu-toggle">☰</button>
+      </div>
+    </div>
+  </header>
 
-        <section id="tools">
-            <h2>Mini Tools</h2>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Hi, I'm Taimur 👋</h2>
+      <p>Sharing my journey as a Web Developer — projects, tutorials, and coding tips.</p>
+      <a href="#posts" class="hero-btn">See My Posts →</a>
+    </div>
+  </section>
 
-            <div class="tool">
-                <h3>Array Sum Calculator</h3>
-                <input type="text" id="sumInput" placeholder="Enter numbers separated by comma">
-                <button onclick="calculateSum()">Calculate Sum</button>
-                <p id="sumResult"></p>
-            </div>
+  <!-- Main Content -->
+  <main class="main-content container">
 
-            <div class="tool">
-                <h3>Reverse Array Tool</h3>
-                <input type="text" id="reverseInput" placeholder="Enter numbers separated by comma">
-                <button onclick="reverseArray()">Reverse</button>
-                <p id="reverseResult"></p>
-            </div>
-        </section>
+    <!-- Featured Post -->
+    <section class="featured-post">
+      <div class="featured-card">
+        <img src="https://via.placeholder.com/900x400" alt="Featured Post">
+        <div class="featured-content">
+          <h2>Building My YouTube Clone</h2>
+          <p>A step-by-step walkthrough of creating my first full-fledged front-end project.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
+    </section>
 
-        <section id="projects">
-            <h2>My Projects</h2>
-            <ul>
-                <li>YouTube Clone</li>
-                <li>Mini JS Calculators</li>
-                <li>Portfolio Website</li>
-            </ul>
-        </section>
-    </main>
+    <div class="content-area">
 
-    <footer>
-        <p>© 2026 CodeWithTaimur | Built with by Taimur Hummayoun</p>
-    </footer>
+      <!-- Posts Grid (Dynamic) -->
+      <section id="posts" class="posts"></section>
 
-    <script src="script.js"></script>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="search-box">
+          <input type="text" placeholder="Search posts...">
+        </div>
+        <div class="categories">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Tips</a></li>
+          </ul>
+        </div>
+        <div class="popular-posts">
+          <h4>Popular Posts</h4>
+          <ul>
+            <li><a href="#">Building a Dark Mode Toggle</a></li>
+            <li><a href="#">Responsive Grid Layout Guide</a></li>
+            <li><a href="#">My First JavaScript Project</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+          <h4>Subscribe to Newsletter</h4>
+          <input type="email" placeholder="Your email">
+          <button>Subscribe</button>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Taimur.dev | Built with by Taimur</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
