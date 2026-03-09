@@ -1,66 +1,303 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
+/* Reset & fonts */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family: 'Inter', sans-serif;
+  line-height:1.6;
+  color:#333;
+  background:#f7f8fa;
 }
 
-header {
-    background: #0b3d91;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* Container */
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
 }
 
-header nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+/* Navbar */
+header{
+  background:white;
+  padding:15px 0;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+nav a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+#theme-toggle{
+  background:none;
+  border:none;
+  font-size:20px;
+  cursor:pointer;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+/* Hero */
+.hero{
+  text-align:center;
+  padding:120px 20px;
+  background:linear-gradient(135deg,#6c5ce7,#a29bfe);
+  color:white;
+  border-radius:15px;
+  margin:30px 0;
+}
+.hero h2{
+  font-size:48px;
+  margin-bottom:15px;
+}
+.hero p{
+  font-size:20px;
+  margin-bottom:25px;
+}
+.hero-btn{
+  text-decoration:none;
+  background:white;
+  color:#6c5ce7;
+  padding:12px 25px;
+  border-radius:8px;
+  font-weight:600;
+  transition:0.3s;
+}
+.hero-btn:hover{
+  background:#dfe6e9;
 }
 
-main {
-    padding: 20px;
+/* Featured Post */
+.featured-card{
+  display:flex;
+  flex-direction:column;
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+  margin-bottom:50px;
+}
+.featured-card img{
+  width:100%;
+  height:auto;
+}
+.featured-content{
+  padding:30px;
+}
+.featured-content h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+.featured-content p{
+  font-size:18px;
+  color:#555;
+  margin-bottom:20px;
+}
+.featured-content a{
+  color:#6c5ce7;
+  font-weight:600;
+  text-decoration:none;
 }
 
-section {
-    margin-bottom: 40px;
+/* Posts Grid */
+.posts{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  margin-bottom:50px;
+}
+.post-card{
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.post-card:hover{
+  transform: translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+.post-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.post-content{
+  padding:20px;
+}
+.post-content h3{
+  margin-bottom:10px;
+}
+.post-content p{
+  color:#555;
+  font-size:16px;
+  margin-bottom:15px;
+}
+.post-meta{
+  font-size:14px;
+  color:#888;
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+.post-content a{
+  text-decoration:none;
+  color:#0077ff;
+  font-weight:bold;
 }
 
-.tool {
-    background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+/* Footer */
+footer{
+  text-align:center;
+  padding:20px 0;
+  background:white;
+  box-shadow:0 -2px 10px rgba(0,0,0,0.05);
 }
 
-input {
-    padding: 5px;
-    width: 250px;
-    margin-right: 10px;
+/* Responsive */
+@media(max-width:768px){
+  .hero h2{font-size:36px;}
+  .hero p{font-size:18px;}
 }
 
-button {
-    padding: 5px 10px;
-    background: #0b3d91;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+body.dark-mode{
+  background:#121212;
+  color:#eee;
+}
+body.dark-mode header,
+body.dark-mode footer{
+  background:#1f1f1f;
+  color:#eee;
+}
+body.dark-mode .hero{
+  background:linear-gradient(135deg,#2d2d2d,#444);
+}
+body.dark-mode .featured-card,
+body.dark-mode .post-card{
+  background:#1f1f1f;
+  color:#eee;
+  box-shadow:0 8px 20px rgba(255,255,255,0.05);
+}
+body.dark-mode a{
+  color:#66ccff;
 }
 
-button:hover {
-    background: #062c63;
+/* Main content layout */
+.main-content{
+  display:flex;
+  flex-direction:column;
+  gap:50px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #0b3d91;
-    color: white;
+/* Content area with posts + sidebar */
+.content-area{
+  display:flex;
+  gap:30px;
+}
+
+/* Posts grid inside content area */
+.posts{
+  flex:3;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+/* Sidebar */
+.sidebar{
+  flex:1;
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  height:fit-content;
+}
+.sidebar h4{
+  margin-bottom:15px;
+}
+.sidebar ul{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.sidebar a{
+  text-decoration:none;
+  color:#6c5ce7;
+}
+.sidebar input{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  margin-bottom:20px;
+}
+
+/* Responsive layout */
+@media(max-width:992px){
+  .content-area{
+    flex-direction:column;
+  }
+  .sidebar{
+    width:100%;
+  }
+}
+
+/* Post Card Hover Animation */
+.post-card{
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transform:translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.post-card:hover{
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:0 16px 30px rgba(0,0,0,0.15);
+}
+
+/* Newsletter */
+.newsletter{
+  margin-top:30px;
+}
+.newsletter input{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+.newsletter button{
+  width:100%;
+  padding:10px;
+  background:#6c5ce7;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.newsletter button:hover{
+  background:#5a4bcf;
+}
+
+/* Smooth hover for featured card */
+.featured-card:hover{
+  transform: translateY(-5px) scale(1.01);
+  box-shadow:0 16px 35px rgba(0,0,0,0.15);
+}
+
+/* Smooth scroll for anchor links */
+html{
+  scroll-behavior:smooth;
 }
